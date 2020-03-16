@@ -431,6 +431,60 @@ header {
 padding-bottom: 30px;
 }
 
+/* ------ ABOUT US FEATURE BOXES ------ */
+.feature-boxes-wrapper {
+    display: flex;
+    justify-content: center;
+/*    background-color: grey;*/
+    padding: 20px 0;
+}
+.feature-box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.box-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    font-size: 6rem;
+    color: #fda207;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+    background-color: #ffefd5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box-text {
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #151515;
+    text-shadow: 1px 1px 2px;
+
+
+}
+
+.box-text::after {
+    content: '';
+    width: 65px;
+    height: 3px;
+    background-color: #fda207;
+    position: absolute;
+    bottom: 10%;
+    right: 50%;
+    transform: translatex(50%);
+}
 
 
 /* ------ ASIDE - OUR TEAM ELEMENTS ------ */
