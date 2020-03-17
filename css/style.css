@@ -435,8 +435,11 @@ padding-bottom: 30px;
 .feature-boxes-wrapper {
     display: flex;
     justify-content: center;
-/*    background-color: grey;*/
+    width: auto;
+    height: auto;
+    flex-direction: column;
     padding: 20px 0;
+    margin: 30px auto 50px auto;
 }
 .feature-box-container {
     display: flex;
@@ -491,10 +494,10 @@ padding-bottom: 30px;
 #our-team-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: #FFC054;
+    background-color: #f1f1f1;
     width: 100%;
     height: auto;
-    padding: 40px 40px 0 40px;
+    padding: 40px 0 0 0;
     overflow: hidden;
 }
 .slick-wrapper:nth-child(1) {
@@ -507,11 +510,12 @@ padding-bottom: 30px;
 .member-content {
     display: block;
     position: relative;
-    margin: 20px;/* DLA SLICK */
+    margin: 20px 10px 20px 10px;;/* DLA SLICK */
     background-color: white;
     z-index: 1;
     box-shadow: 10px 0 18px -14px rgba(21, 21, 21, 0.6), -10px 0 18px -14px rgba(21, 21, 21, 0.6);
 }
+/*
 .member-content::before {
     content: '';
     width: 40px;
@@ -519,11 +523,12 @@ padding-bottom: 30px;
     position: absolute;
     top: -10px;
     left: -10px;
-/*    transform: translate(-15px, -15px);*/
+    transform: translate(-15px, -15px);
     background-color: white;
     opacity: .85;
     z-index: -1; 
 }
+*/
 .member-img-bar {
     display: block;
     height: 65px;
@@ -618,13 +623,17 @@ padding-bottom: 30px;
     left: -1.3rem;
     width: 80px;
     height: 4.5rem;
+    background-color: #fda207;
     z-index: -1;
 }
 .h1-about-us {
     margin-bottom: 40px; 
 }
-.h1-about-us::before {background-color: #fda207;}
-.h1-our-team::before {background-color: white;}
+
+.h1-our-team {
+    margin-left: 30px;
+}
+
 
 
 
@@ -957,7 +966,6 @@ padding-bottom: 30px;
     .h2-header {
     font-size: 6.6rem
     }
-
     .h1-events::before{
     width: 160px;
     }
@@ -1085,6 +1093,15 @@ padding-bottom: 30px;
     }
     .h2-header {
     font-size: 8.6rem;
+    }
+    .feature-boxes-wrapper {
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .feature-box-container{
+        width: 33.3%;
     }
 
 }
@@ -1217,6 +1234,9 @@ padding-bottom: 30px;
     }
     .events-wrapper, #about-us-wrapper, #our-team-wrapper {
     padding: 30px 60px;
+    }
+    .h1-our-team {
+    margin-left: 0;
     }
     .member-name {
     font-size: 5.5rem;
