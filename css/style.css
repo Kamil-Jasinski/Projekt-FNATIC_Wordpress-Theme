@@ -448,21 +448,40 @@ padding-bottom: 30px;
     align-items: center;
     margin-top: 20px;
 }
+/* Rounded container for icons */
 .box-icon {
     display: flex;
+    position: relative;
     justify-content: center;
     margin-top: 20px;
     align-items: center;
     font-size: 6rem;
-    color: #fda207;
+    color: #413e39;
     width: 200px;
     height: 200px;
     border: 1px solid rgba(0, 0, 0, 0.07);
     border-radius: 50%;
     background-color: #ffefd5;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 15px #fda20740, 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: border .3s;
 }
-
+.feature-box-container:hover .box-icon {
+    border: 3px solid rgba(0, 0, 0, 0.13);
+    color: #131313;
+}
+/* icons animation */
+.box-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-in-out;
+}
+.feature-box-container:hover .box-icon i {
+    top: 47%;
+    font-size: 6.5rem;
+}
+/* text styles */
 .box-text {
     position: relative;
     padding: 30px 0;
@@ -474,10 +493,8 @@ padding-bottom: 30px;
     letter-spacing: 1px;
     color: #151515;
     text-shadow: 1px 1px 2px;
-
-
 }
-
+/* box-text underline */
 .box-text::after {
     content: '';
     width: 65px;
@@ -1095,7 +1112,7 @@ padding-bottom: 30px;
     font-size: 8.6rem;
     }
     .feature-boxes-wrapper {
-        width: 100%;
+        width: 65%;
         height: 100%;
         flex-wrap: wrap;
         flex-direction: row;
