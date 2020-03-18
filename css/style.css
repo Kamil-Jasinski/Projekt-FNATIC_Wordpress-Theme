@@ -448,39 +448,56 @@ padding-bottom: 30px;
     align-items: center;
     margin-top: 20px;
 }
-/* Rounded container for icons */
+/* Diamond container for icons */
 .box-icon {
     display: flex;
-    position: relative;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
     font-size: 6rem;
     color: #413e39;
     width: 200px;
     height: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 50%;
+    margin: 50px 0;
+    transform: rotate(45deg);
     background-color: #ffefd5;
-    box-shadow: inset 0 0 15px #fda20740, 0 10px 25px rgba(0, 0, 0, 0.35);
-    transition: border .3s;
+    border: 1px solid rgba(253, 162, 7, 0.5);
+    box-shadow: inset 0 0 25px rgba(253, 162, 7, 0.45), 0 0px 25px rgba(0, 0, 0, 0.35);
+    transition: all .3s ease-in-out;
 }
 .feature-box-container:hover .box-icon {
-    border: 3px solid rgba(0, 0, 0, 0.13);
+    border: 2px solid rgba(253, 162, 7, 0.5);
     color: #131313;
+    box-shadow: inset 0 0 35px rgba(253, 162, 7, 0.45), 0 0px 25px rgba(0, 0, 0, 0.35);
 }
-/* icons animation */
+
+/* icons + animation on hover */
 .box-icon i {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate( -45deg );
     transition: all .3s ease-in-out;
 }
 .feature-box-container:hover .box-icon i {
-    top: 47%;
+    left: 48%;/* dla diamentu góra to lewo */
     font-size: 6.5rem;
 }
+
+/* box-icon border (outside)*/
+.box-icon::before {
+    content: '';
+    position:absolute;
+    width: 215px;
+    height: 215px;
+    background-color: transparent;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+.feature-box-container:hover .box-icon::before {
+    width: 227px;
+    height: 227px;
+}
+
 /* text styles */
 .box-text {
     position: relative;
@@ -1112,7 +1129,7 @@ padding-bottom: 30px;
     font-size: 8.6rem;
     }
     .feature-boxes-wrapper {
-        width: 65%;
+        width: 85%;
         height: 100%;
         flex-wrap: wrap;
         flex-direction: row;
@@ -1318,6 +1335,8 @@ padding-bottom: 30px;
 
 
 /* ------ ANIMATIONS ------ */
+
+/*Animacja strzałki arrow-down w HEADERze */
 @keyframes arrow-down {
     0%{
         transform: translateY(-150%);
@@ -1341,7 +1360,8 @@ padding-bottom: 30px;
         transform: translateY(150%);
         color: rgba(255, 255, 255, 0.4);
     }
-}/*Animacja strzałki arrow-down w HEADERze */
+}
+/*Animacja pływającego napisu 'Join Us' w HEADERze  */
 @keyframes join-us {
     0%{
         transform: translateX(0px);
@@ -1356,6 +1376,5 @@ padding-bottom: 30px;
         opacity: .9;
         
     }
-}/*Animacja pływającego napisu 'Join Us' w HEADERze  */
-
+}
 /* ------ Coded by Kamil Jasiński ------ */
