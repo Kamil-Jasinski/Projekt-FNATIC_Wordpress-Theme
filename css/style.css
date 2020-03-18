@@ -355,6 +355,7 @@ header {
 }
 .content-text {
     font-size: 1.55rem;
+    line-height: 1.45;
 }
 
 
@@ -369,7 +370,7 @@ header {
     align-items: center;
     padding: 10px 25px;
     margin: 20px 0 20px 20px;;
-    background-color: none;
+    background-color: transparent;
     max-width: 160px;
     position: relative;
     z-index: 1;
@@ -432,6 +433,10 @@ padding-bottom: 30px;
 }
 
 /* ------ ABOUT US FEATURE BOXES ------ */
+/* Do rozdzielczości 768px wyświetlany jest tylko 1 element.
+   Do rozdzielczości 1024px wyświetlane jest 2 elementy.
+   Od rozdzielczości 1280px wyświetlane jest 3 elementy.
+*/
 .feature-boxes-wrapper {
     display: flex;
     justify-content: center;
@@ -511,6 +516,9 @@ padding-bottom: 30px;
     color: #151515;
     text-shadow: 1px 1px 2px;
 }
+/* number color change*/
+.orange {font-family: 'Roboto', sans-serif; transition: color .3s ease-in-out;}
+.feature-box-container:hover .orange {color: #fda207;}
 /* box-text underline */
 .box-text::after {
     content: '';
@@ -1008,12 +1016,6 @@ padding-bottom: 30px;
     margin-top: 0;
     width: 50%;
     }
-    .btn-default{
-    font-size: 2.4rem;
-    max-width: 280px
-    }
-
-    
 }
 
 @media screen and (min-width: 1360px) and (orientation: landscape) {
@@ -1048,7 +1050,10 @@ padding-bottom: 30px;
 
 /* ------ DESKTOP + LARGE MOBILE ------ */
 @media screen and (min-width: 768px) {
-      .socials {
+    #hamburger-open, #hamburger-close {
+        font-size: 4rem;
+    }
+    .socials {
     font-size: 3.5rem;
     }
     .socials-reminder {
@@ -1097,6 +1102,19 @@ padding-bottom: 30px;
     .content-text {
     font-size: 2rem;
     }
+    .btn-default {
+    font-size: 2.4rem;
+    max-width: 280px
+    }
+    .feature-boxes-wrapper {
+    width: 100%;
+    height: 100%;
+    flex-direction:row;
+    flex-wrap: wrap;
+    }
+    .feature-box-container {
+    width: 50%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1134,10 +1152,6 @@ padding-bottom: 30px;
         flex-wrap: wrap;
         flex-direction: row;
     }
-    .feature-box-container{
-        width: 33.3%;
-    }
-
 }
 
 @media screen and (min-width: 1280px) {
@@ -1268,6 +1282,15 @@ padding-bottom: 30px;
     }
     .events-wrapper, #about-us-wrapper, #our-team-wrapper {
     padding: 30px 60px;
+    }
+    .feature-boxes-wrapper {
+    width: 85%;
+    height: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+    .feature-box-container{
+    width: 33%;
     }
     .h1-our-team {
     margin-left: 0;
