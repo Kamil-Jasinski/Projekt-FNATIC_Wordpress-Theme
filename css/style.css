@@ -1,3 +1,5 @@
+
+
 /* ------ BASIC CSS ------ */
 * {
     padding: 0;
@@ -10,14 +12,15 @@
     -webkit-tap-highlight-color: rgba(255, 255, 0, .1);
 }
 html {
+    background-color: #151515;
     width: 100vw;
     font-size: 10px;
 }
 ::-moz-selection { /* Code for Firefox */
-  background: yellow;
+  background: #fda207;
 }
 ::selection {
-  background: yellow;
+  background: #fda207;
 }
 .disable-select {
     user-select: none; /* supported by Chrome and Opera */
@@ -45,12 +48,13 @@ html {
 /* ------ HEADER ------ */
 header {
     height: 100vh;
-    background-color: #ffd829;
+    background-color: #151515;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(300deg, #151515  10% 25%, #ffd829 25.2% 30%, #151515  30.2% 40%, #ffd829 40.2% 100%);
-    background: url(/addons/img/fnatichero.jpg) no-repeat center ;
+    background: url(http://localhost/wordpress/wp-content/themes/projectfnatic/addons/img/fnatichero.jpg) no-repeat center ;
     background-size: cover;
+    
+/* background-size i background są zdefiniowane w pliku header.php aby można było zmienić obraz tła w panelu admina w wordpressie jednak zostawiłem te ustawienia w style.css - just in case :)  */
 }
 
 
@@ -68,7 +72,7 @@ header {
     font-size: 2.4rem;
     cursor: pointer;
     z-index: 4;
-    color: white;
+    color: #fff;
 /*  border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 40%;
     background-color: rgba(25, 24, 24, 0.7);*/
@@ -83,7 +87,7 @@ header {
     width: 4rem;
     background-color: rgba(25, 24, 24, 0.7);
     border-radius: 40%;
-    top: 15px;
+    top: 35px;
     right: 15px;
     font-size: 2.4rem;
     cursor: pointer;
@@ -91,6 +95,10 @@ header {
     color: #fff;
     -webkit-tap-highlight-color: transparent;
 }
+
+.dark {
+    color: #151515;}
+
 
 
 
@@ -109,6 +117,10 @@ header {
     overflow-x: hidden;
     
 }
+.navLinks .socials a {
+    display: inline-block;
+    padding: 0;
+}
 .socials-reminder {
     display: block;
     padding: 3px 3px;
@@ -121,7 +133,8 @@ header {
     margin-bottom: 10px;
         
 }
-.fb_icon, .instagram_icon, .youtube_icon {
+.fb_icon, .instagram_icon, .youtube_icon{
+    display: block;
     margin: 25px 15px 25px 0;
     cursor: pointer;
     color: white;
@@ -181,6 +194,12 @@ header {
     width: 100%;
     height: 100vh;
     opacity: 0.45;
+    /*
+    Kod poniżej generuje overlay z 'małymi kołami' co nadaje 'efektu siatki'  
+    background-image: radial-gradient(black 50%, transparent 50%);
+    background-size: 3px 3px;*/
+    
+    
 }
 
 
@@ -206,7 +225,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px 25px;
-    background-color: none;
+    background-color: transparent;
     min-width: 200px;
     position: relative;
     z-index: 1;
@@ -267,16 +286,22 @@ header {
 .links-container {
     padding-top: 6vh
 }
+.navLinks a {
+    display: block;
+    color: #fff;
+    padding: 20px 0;
+}
 .navItem {
     display: block;
     position: relative;
-    padding: 20px 0;
     text-align: center;
-    color: rgba(255, 216, 41, 0.62);
     font-size: 2.6rem;
     min-width: 300px;
     width: 100%;
     -webkit-tap-highlight-color: rgba(255, 255, 0, .1);
+}
+.navItem a {
+    color: rgba(255, 216, 41, 0.62);
 }
 .navItem:last-child{
     border: none;
@@ -353,11 +378,264 @@ header {
     font-weight: 500;
     margin-bottom: 5px;
 }
+.event a {color: #151515;}
 .content-text {
     font-size: 1.55rem;
     line-height: 1.45;
 }
+.post-details {
+    font-size: 2rem;
+    color: #151515;
+    border-top: 1px solid #151515;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+#post-author, .comment-author a{
+    color: #fda207;
+}
+.post-edit-link {
+    background-color: #464646;
+    font-size: .6em;
+    padding: .4em .7em;
+    transition: all .4s;
+}
+a.post-edit-link {color: #fff;}
+.post-edit-link:hover {background-color: #2d2d2d;}
 
+
+
+
+
+
+/* COMMENT SECTION */
+.comments-container {
+    
+    border-top: 1px solid rgba(21, 21, 21, 0.4);
+    margin: 5rem auto 0 auto;
+    padding: 40px 20px 20px 20px;
+    width: 100%;
+    -webkit-box-shadow: 0 7px 27px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 7px 27px -12px rgba(0,0,0,0.75);
+    box-shadow: 0 7px 27px -12px rgba(0,0,0,0.75);
+}
+.comments-count {
+    /*Counter for comments*/
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+.comment-body {
+    /*Comment wrapper*/
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px 0 0 10px;
+    border-bottom: 1px solid rgba(253, 162, 7, 0.5);
+    border-left: 1px solid rgba(21, 21, 21, 0.3);
+    transition: background-color .4s;
+}
+.comment-body:hover {background-color: #fff7e8}
+.comment-author {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.comment-author-link {
+    /*Author Name*/
+    font-size: 2.5em;
+}
+.comment-author img {
+    /*Rounded Avatar with border for commentator*/
+    border-radius: 50%;
+    border: 2px solid rgba(21, 21, 21, 0.45);
+}
+.comment-meta {
+    margin-bottom: .2em;
+    font-size: 1.2em;
+}
+.comment-metadata {
+    display: inline-block;
+    color: #151515;
+}
+.comment-text {
+    /*Posted Comment Field*/
+    position: relative;
+    background-color: #ffeed2;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    font-size: 1.8em;
+    padding: 10px;
+    margin: 15px 0 10px 0;
+    width: 100%;
+}
+.comment-text .emoji {font-size: 1.15em;}
+.comment-text::before {
+    /*Add 'ARROW UP' to comment text (left top corner)*/
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ffeed2;
+    transform: translate(0,-100%);
+}
+.bypostauthor .comment-author-link a::after{
+    /*Add (Post Author) close to commentator name if is post author*/
+    content: ' (Post Author)';
+    font-size: .5em;
+    color: rgba(0, 0, 0, 0.6);
+}
+.comment-footer {
+    /*Footer for each comment, inc. comment date & edit comment link*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+/*.reply a,*/ .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: .7em;
+    background-color: #fda207;
+    color: #fff;
+    transition: .3s;
+    
+}
+.reply-button a{
+    /*Reply button for each comment*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: .7em;
+    margin-right: 20px;
+    background-color: #fda207;
+    color: #fff;
+    transition: .3s;
+    max-width: 80px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+/*.reply a {
+    max-height: auto;
+    max-width: 80px;
+    margin-left: -10px;
+}*/
+.reply-button a:hover, .submit:hover {
+    /*Hover effect on buttons*/
+    background-color: #ff9300;
+}
+.comment-edit-link {
+    /*Edit comment text color*/
+    color: #fda207;
+}
+.children{
+    /*For first comment reply*/
+    margin-left: 4rem;
+    border-left: dashed 1px rgba(21, 21, 21, 0.3);
+}
+.children .children{
+    /*Space between dashed lines in reply comments*/
+    margin-left: 1em;
+}
+.children .comment-body {
+    /*SOLID BORDER for children - off*/
+    border-left: none;
+}
+.children::before{
+    /*Respond To - ARROW UP*/
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid rgba(21, 21, 21, 0.6);
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.comment-reply-title {
+    /*"Join The Discussion - text"*/
+    font-size: 3em;
+}
+
+/*COMMENT INPUTS*/
+input {
+    margin-bottom: 20px;
+}
+
+.form__field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #151515;
+  padding: 7px 0;
+  
+}
+/*Native emoji tworzy fake textarea, dzięki JS ustawiłem display:block dla #comment textarea znajdującego się w part_comments.php po usunięciu Native Emojis można usunąć #nep_fake_textarea oraz funkcję changeStyle() z js*/
+#nep_fake_textarea {display: none;}
+#comment::placeholder {
+    color: rgba(21, 21, 21, 0.6);
+    position: relative;
+    z-index: 9999999!important;
+    font-size: 1.2em;
+}
+
+.required {
+    /* Star close to required fields is more visible*/
+    font-size: 2em;
+}
+
+.comments-container textarea {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    font-size: 1.7em;
+    color: #151515;
+    min-height: 100px;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #fda207,rgba(253, 162, 7, 0.66), rgba(253, 162, 7, 0.33));
+  border-image-slice: 1;
+}
+
+.form__field:focus::placeholder {
+    color: #fda207;
+}
+
+.submit {
+    margin-top: 20px;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+/* POST THUMBNAIL SECTION*/
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0 auto 0 auto;
+}
+
+.thumbnail-container img {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    position: sticky;
+    top: 3rem;
+}
 
 
 /* ------ DEFAULT BUTTON STYLE ------ */
@@ -418,17 +696,25 @@ header {
     align-items: flex-start;
 }
 .about-us-info, .about-us-video {
-    width: 100%;
     justify-content: center;
 }
 .about-us-video {
+    width: 90%;
+    margin: 0 auto 30px auto;
     display: flex;
     align-items: center;
     background-color: white;
     height: auto;
-    padding: 20px;
+    border-right: 3px solid #fda207;
+    border-bottom: 5px solid #fda207;
+    max-width: 1280px;
+    max-height: 720px;
+}
+.about-us-video .widget_media_video {
+    width: 100%;
 }
 .about-us-info {
+    width: 100%;
 padding-bottom: 30px;
 }
 
@@ -452,6 +738,8 @@ padding-bottom: 30px;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    opacity: 0;
+    transform: translateY(70px);
 }
 /* Diamond container for icons */
 .box-icon {
@@ -470,6 +758,11 @@ padding-bottom: 30px;
     transition: all .3s ease-in-out;
 }
 .feature-box-container:hover .box-icon {
+    border: 2px solid rgba(253, 162, 7, 0.5);
+    color: #131313;
+    box-shadow: inset 0 0 35px #fda207, 0 0 25px rgba(0,0,0,.35);
+}
+.box-icon-visible {
     border: 2px solid rgba(253, 162, 7, 0.5);
     color: #131313;
     box-shadow: inset 0 0 35px #fda207, 0 0 25px rgba(0,0,0,.35);
@@ -534,13 +827,29 @@ padding-bottom: 30px;
 
 /* ------ ASIDE - OUR TEAM ELEMENTS ------ */
 #our-team-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #E6E6E6;
+    background-color: #96969621;
     width: 100%;
     height: auto;
     padding: 40px 0 0 0;
     overflow: hidden;
+    
+    -webkit-box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.03);
+    -moz-box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.03);
+    box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.03);
+}
+.corner-dots-right {
+    display: block;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 10%;
+    height: auto;
+    transform: rotate(-90deg);
+    opacity: .8;
+
 }
 .slick-wrapper:nth-child(1) {
     padding-left: 10px;
@@ -548,7 +857,7 @@ padding-bottom: 30px;
 .member-wrapper {
     margin-bottom: 70px;
 }
-.member-wrapper:last-child{margin-bottom: 0px;}
+.member-wrapper:last-child{margin-bottom: 0;}
 .member-content {
     display: block;
     position: relative;
@@ -612,6 +921,9 @@ padding-bottom: 30px;
     border-right: 2px solid rgba(21, 21, 21, 0.3);
     border-left: 2px solid rgba(21, 21, 21, 0.3);
     border-bottom: 2px solid rgba(21, 21, 21, 0.3);
+    background: linear-gradient(180deg, rgba(21,21,21,.12) 25%, rgba(253,162,7,.03) 70%);
+/*    background: linear-gradient(180deg, rgba(253,162,7,.07) 15%, rgba(21,21,21,.1) 70%);*/
+    
 }
 .member-hgroup {
     display: flex;
@@ -628,7 +940,7 @@ padding-bottom: 30px;
 }
 .member-name::before {
     content: "";
-    clip-path: polygon(100% 0px, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
     width: 50px;
     height: 50px;
     background-color: #fda207;
@@ -637,6 +949,7 @@ padding-bottom: 30px;
     left: -25px;
     z-index: -1;
 }
+/*.member-name h2 {font-size: 4rem;} */
 .member-function {
     font-size: 2rem;
     font-style: italic;
@@ -684,7 +997,7 @@ padding-bottom: 30px;
     height: auto;
     overflow: hidden;
     padding: 50px 30px;
-    background-color: #606060;
+    background-color: #383838;
 }
 .partners-wrapper {
     display: flex;
@@ -722,8 +1035,8 @@ padding-bottom: 30px;
 
 #footer-nav {
     width: 100%;
-    padding: 50px 30px 0px 30px;
-    background-color: #404040;
+    padding: 50px 30px 0 30px;
+    background-color: #313131;
     display: flex;
     flex-direction: column;
 
@@ -803,10 +1116,25 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #151515;
+    background-color: #2d2d2d;
     padding: 10px;
     color: #fff;
     font-size: 1.2rem;
+}
+
+.go-up {
+    font-size: 35px;
+    color: #151515;
+    transition: color .3s ease-in;
+}
+.go-up:hover {color: #fda207;}
+#go-up-arrow {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
 }
 
 
@@ -866,9 +1194,10 @@ footer {
     .hamburger_bar {
     height: 10vh;
     }
+    .navLinks a {
+    padding: 10px 0;}
     .navItem{
     font-size: 1.5rem;
-    padding: 10px;
     }
     .navLinks {
     height: 100vh;
@@ -886,7 +1215,7 @@ footer {
     bottom: 2.7%;
     height: 55px;
     width: 55px;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
     border: 3px solid white;
     }
     .hero-btn-container{
@@ -909,9 +1238,10 @@ footer {
     .links-container {
     margin-bottom: 10px;
     }
+    .navLinks a {
+    padding: 10px 0;}
     .navItem{
     font-size: 1.5rem;
-    padding: 10px;
     }
     .navLinks {
     height: 100vh;
@@ -930,7 +1260,7 @@ footer {
     bottom: 2.7%;
     height: 55px;
     width: 55px;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
     border: 3px solid white;
     }
     .hero-btn-container{
@@ -959,7 +1289,6 @@ footer {
 }
     .navItem{
         font-size: 1.5rem;
-        padding: 10px;
 }
     .navLinks {
         height: 100vh;
@@ -992,7 +1321,7 @@ footer {
     bottom: 2.7%;
     height: 80px;
     width: 80px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 1);
     border: 4px solid white;
     }
     .arrow-down {
@@ -1009,7 +1338,7 @@ footer {
     }
     .events{
         display: flex;
-        widows: 100%;
+        width: 100%;
         flex-direction: column;
     }
     .event {
@@ -1070,7 +1399,7 @@ footer {
     bottom: 2.7%;
     height: 100px;
     width: 100px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 1);
     border: 4px solid white;
     }
     .arrow-down {
@@ -1120,9 +1449,10 @@ footer {
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
 
+    .navLinks a {
+    padding: 10px 0;}
     .navItem{
     font-size: 1.8rem;
-    padding: 10px;
     }
     .navLinks {
     height: 100vh;
@@ -1165,7 +1495,6 @@ footer {
     }
     .navItem{
     font-size: 1.8rem;
-    padding: 10px;
     }
     .navLinks {
     height: 100vh;
@@ -1214,7 +1543,7 @@ footer {
     }
     .events{
     display: flex;
-    widows: 100%;
+    width: 100%;
     flex-direction: column;
     }
     .event {
@@ -1240,6 +1569,29 @@ footer {
     .content-text {
     font-size: 2rem;
     }
+    .comments-container {
+    width: 60%;
+    }
+    .comment-text {
+    /*Posted Comment Field*/
+    position: relative;
+    background-color: #fda2072e;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    font-size: 1.8em;
+    padding: 20px;
+    margin: 15px 0 10px 0;
+    width: 100%;
+    }
+    .comment-text .emoji {font-size: 1.15em;}
+    .comment-text::before {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fda2072e;
+    
+    }
+    
+    
     .btn-default {
     font-size: 2.4rem;
     max-width: 280px
@@ -1285,18 +1637,25 @@ footer {
     }
 }
 
-/*Do tego momentu nie będzie wyświetlane BG VIDEO*/
+/*Do tego momentu NIE będzie wyświetlane BG VIDEO*/
 @media screen and (max-width: 1024px) {
         
     .hero-video-container, .h1-logo {
         display: none;
     }
+    
 
 }
 
 @media screen and (min-width: 1024px) {
 
-    
+    .color-overlay {
+    background-color: #151515;
+    /*
+    Kod poniżej generuje overlay z 'małymi kołami' co nadaje 'efektu siatki' */ 
+    background-image: radial-gradient(#000 50%, rgba(0, 0, 0, .5) 50%);
+    background-size: 4px 4px;
+    }
     .member-name {
     font-size: 4rem;
     }
@@ -1321,11 +1680,17 @@ footer {
         flex-wrap: wrap;
         flex-direction: row;
     }
+    
+    .thumbnail-container img {
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-    #hamburger-open, #hamburger-close, .socials-reminder {
-    display: none;
+    #hamburger-open, #hamburger-close, .socials-reminder, .hamburger-bar {
+    display: none!important;
     }
     #navContainer, .navLinks {
     background-color: transparent;
@@ -1335,7 +1700,7 @@ footer {
     display: block;
     transform:  translateX(0);
     width: 100vw;
-    height: auto;
+    height: auto!important;
     position: absolute; /* Dzięki temu nie da się przewinąc menu bez zamknięcia (było position fixed*/
     }
     .navLinks {
@@ -1355,17 +1720,17 @@ footer {
     width: 100%;
     padding-top: 0;
     }
+    .navLinks a {
+        padding: 10px;
+    }
     .navItem {
     position: relative;
     display: block;
     width: auto;
-    padding: 0;
     text-align: center;
-    color: white;
     font-size: 2rem;
     min-width: auto;
     margin-right: 15px;
-    padding: 10px;
     border: none;
     }
     .navItem::before {
@@ -1373,7 +1738,7 @@ footer {
     position: absolute;
     display: block;
     width: 2px;
-    height: 0px;
+    height: 0;
     bottom: 10%;
     left: 2px; 
     background-color: #fda207;
@@ -1386,7 +1751,7 @@ footer {
     .navItem::after {
     content: "";
     display: block;
-    width: 0px;
+    width: 0;
     height: 2px;
     position: absolute;
     bottom: 10%;
@@ -1399,10 +1764,12 @@ footer {
    content: "";
    width: 90%;
     }
+    .navItem a {
+        color: white;
+    }
     .socials {
     display: block;
     font-size: 4.2rem;
-    position: static;
     bottom: 10%;
     left: 50%;
     transform: translate(0,0);
@@ -1452,7 +1819,6 @@ footer {
     .events-wrapper, #about-us-wrapper, #our-team-wrapper, #footer-nav {
     padding: 30px 60px;
     }
-    padding: 50px 30px 55px 30px;
     .feature-boxes-wrapper {
     width: 85%;
     height: 100%;
@@ -1501,8 +1867,20 @@ footer {
     }
     .footer-links-wrapper {
     width: 55%;
+    }
 }
 
+/*Thumbnail Img responsive  - 1366px*/
+@media screen and (min-width: 1366px) {
+    .thumbnail-container {
+        padding-top: 0;
+    }
+    .thumbnail-container img {
+    max-width: 100%;
+    width: 580px;
+    height: auto;
+    }
+}
 @media screen and (min-width: 1920px) {
     
     #headerText{
@@ -1529,6 +1907,12 @@ footer {
     .content-text {
     font-size: 2.5rem;
     }
+    .thumbnail-container img {
+    max-width: 100%;
+    width: 720px;
+    height: auto;
+    }
+    
 }
 
 
@@ -1579,7 +1963,36 @@ footer {
     }
 }
 
+@keyframes featureBoxes {
+    from {
+         opacity: .4;
+         transform: translateY(70px) ;
+    }
+    to {
+         opacity: 1;
+         transform: translateY(0px);
+    }
+}
+
+@keyframes numberColor {
+ from {
+         
+        color: #151515;
+    }
+    to {
+         
+        color: #fda207;
+         
+    }
+}
 .clear {
     clear: both;
 }
+
+ .fixedPosition
+ {
+    position: fixed;
+    overflow: hidden;
+ }
+
 /* ------ Coded by Kamil Jasiński ------ */
