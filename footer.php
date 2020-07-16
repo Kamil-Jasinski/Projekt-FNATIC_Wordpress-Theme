@@ -5,19 +5,23 @@
     <div class="footer-links-wrapper">
        <div class="fnatic-links">
             <h2 class="h2-footer-links">FNATIC</h2>
-            <a href="http://localhost/wordpress/">Home</a>
-            <a href="#about-us-wrapper">About the club</a>
-            <a href="#achievments">Achievments</a>
-            <a href="#our-team-wrapper">Team</a>
-            <a href="#events">Events</a>
-       </div>
+        <?php
+            wp_nav_menu( array(
+            'theme_location' => 'footer_fnatic',
+            'container_class'      => '',
+            ));
+        ?>
+       </div><!-- /fnatic-links-->
 
        <div class="site-links">
             <h2 class="h2-footer-links">SITE LINKS</h2>
-            <a href="#partners">Partners</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contact</a>
-       </div>
+        <?php
+            wp_nav_menu( array(
+            'theme_location' => 'footer_site',
+            'container_class'      => '',
+            ));
+        ?>
+       </div><!-- /site-links-->
 
        <div class="follow-us">
             <h2 class="h2-footer-links">FOLLOW US</h2>
@@ -35,14 +39,14 @@
                </a>   
             
        </div><!-- /follow-us -->
-    </div>
-</section>
+    </div><!-- /footer-links-wrapper-->
+</section><!-- /footer-nav-->
 
 <footer class="site-footer">
     <a id="go-up-arrow" href="#top" alt="GO UP"><i  class="fas fa-caret-square-up go-up"></i></a>
     <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
-    
 </footer>
+
 </main>
 
 <?php wp_footer(); ?>
