@@ -66,7 +66,7 @@
             <nav id="navContainer">
         
 <!--        HAMBURGER ICON OFF        -->  
-            <div id="hamburger-close"><i class="fas fa-times"></i></div>
+            <div id="hamburger-close"><i class="fas fa-angle-double-left"></i></div>
 
             <div class="navLinks">          
     <?php
