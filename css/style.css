@@ -488,7 +488,6 @@ a.post-edit-link {color: #fff;}
     padding: 10px;
     margin: 15px 0 10px 0;
     width: 100%;
-    overflow: scroll;
 }
 .comment-text .emoji {font-size: 1.15em;}
 .comment-text::before {
@@ -1593,7 +1592,8 @@ footer {
     font-size: 2rem;
     }
     .comments-container {
-    width: 60%;
+        width: 85%;
+        max-width: 1800px;
     }
     .comment-text {
     /*Posted Comment Field*/
