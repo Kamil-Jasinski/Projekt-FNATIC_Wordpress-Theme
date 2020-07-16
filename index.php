@@ -1,11 +1,64 @@
 <?php get_header();  ?>
-<?php get_template_part('part_header'); ?>
+<?php get_template_part('single_menu'); ?>
 
-<span style="background-color: rgba(39, 215, 12, 0.79)">THAT IS INDEX.PHP
+<!-- TEN PLIK WYŚWIETLA OSOBNY POST-->
+        <?php if (have_posts()) :
+            while (have_posts()) : the_post(); ?>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit saepe a repellat ea quod aperiam, modi fugiat ad deserunt neque? Ipsa asperiores sint maiores nemo soluta nulla ipsam nesciunt iusto labore nihil, voluptates est, repudiandae officia ducimus sed mollitia doloremque velit distinctio consectetur vel! Nihil incidunt delectus temporibus explicabo, in nisi molestiae magnam. Dolor optio veniam consectetur, magni ducimus sint quisquam velit, ipsam iure obcaecati odit praesentium sit! Perferendis a atque maxime veniam, magni voluptatem suscipit eveniet voluptates assumenda at hic adipisci, obcaecati sint asperiores, molestiae dolor, esse! Ipsam illo molestiae, nihil, et consequuntur repudiandae nulla ea officia est odio cumque. Similique nesciunt voluptatum adipisci a impedit earum, et nulla sit fugit. Veritatis adipisci, cumque. Fugiat a quae deserunt voluptate at, accusantium eius magnam est voluptatibus similique maxime enim, nemo impedit ea temporibus neque? Nam nihil velit explicabo beatae eius omnis, perspiciatis quos fugit minima illo eos, adipisci non. Quod.</span>
+
+
+<section id="post" class="events-wrapper"><!-- Included the last events -->
+           <h1 class="h1-events" style="border-bottom: 1px solid #151515; margin-bottom: 30px; padding-bottom: 30px;"><?php the_title();?></h1>
+
+           <p class="comments-count">
+  <i class="fas fa-comments"></i>
+  <?php comments_number( 'Be the first to comment :)', 'One Response', '% responses' ); ?>
+</p>
+
+
+   <section class="events">
+<!--          ARTICLE ONE          -->
+
+
+    <article class="event">
+      <div class="event-general-info"> <!-- Included information about date and location -->
+
+            <div class="thumbnail-container"><?php the_post_thumbnail(); ?></div>
+            <h2 class="event-date"><?php echo get_the_date( 'm.d' ); ?></h2>
+            <h3 class="event-location"><i class="fas fa-map-marker-alt"></i> <?php show_categories(); ?></h3>
+
+      </div>
 
 
 
+        <div class="event-info"> <!-- Included event title & article -->
+            <div class="event-title">
+
+
+
+            </div>
+
+
+            <article class="content-text">
+                <?php the_content();?>
+                <a href="<?php the_permalink();?>#post" class="btn-default">Read More</a>
+            </article>
+
+
+        </div>
+    </article>
+
+
+  </section><!--EVENTS    -->
+
+</section><!--     --- EVENTS WRAPPER --- END     -->
+
+
+
+
+    <?php  endwhile;
+        else :
+          echo '<p>Sorry, no content found.</p>';
+    endif; ?>
 
 <?php get_footer(); ?>
