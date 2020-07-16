@@ -3,7 +3,7 @@
             <div id="hamburger-open" class="disable-select"><i class="fas fa-bars disable-select"></i></div>
             </div>
             
-            <?php if ( is_single() || is_page() ) { ?>
+            <?php if ( is_single() || is_page() || is_archive() ) { ?>
  
             <style>
                 /*This styles will onlye appear if page witch is displayed is single page.*/
@@ -13,14 +13,17 @@
                     position: relative;
                     width: 100%;
                     padding: 15px;
-                    background-color: #151515;
+                    background-color: transparent;
                     align-items: center;
                     justify-content:flex-end;
+                    border-bottom: 1px solid #151515;
+                    box-shadow: 0px 13px 17px -17px rgba(0,0,0,0.45);
                 }
                 #hamburger-open {
                     position: static;
-                   top: 0px;
-                   right: 0px;
+                    top: 0px;
+                    right: 0px;
+                    color: #151515;
                 }
                 #navContainer {
                     display: block;
