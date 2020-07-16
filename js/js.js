@@ -115,7 +115,7 @@ function isVisible() {
         NumbersObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                     if(entry.intersectionRatio > 0 ) {
-                        entry.target.style.animation =  `numberColor 1s forwards ease-in-out`;
+                        entry.target.style.animation =  `numberColor .7s forwards ease-in-out`;
                     }
 //                    else {
 //                        entry.target.style.animation = 'none';
@@ -147,7 +147,6 @@ function openMenu() {
             //jeśli menu jest zamknięte 'true' - otwórz
                 navContainer.style.transform = "translateX(0)";
                 hamburgerOpen.style.transform = "translateX(50vw)";
-                $('body').addClass("fixedPosition");
 
             isClosed = false;
         };
@@ -158,7 +157,6 @@ function closeMenu () {
             //jeśli menu jest otwarte 'false' - zamknij
                 navContainer.style.transform = "translateX(-105%)";
                 hamburgerOpen.style.transform = "translateX(0)";
-                $('body').removeClass("fixedPosition");
 
             isClosed = true;
         };
@@ -265,4 +263,3 @@ document.addEventListener("DOMContentLoaded", setTimeout(changeStyle, 50));
 
 
     
-   
