@@ -147,6 +147,7 @@ function openMenu() {
             //jeśli menu jest zamknięte 'true' - otwórz
                 navContainer.style.transform = "translateX(0)";
                 hamburgerOpen.style.transform = "translateX(50vw)";
+                $('body').addClass("fixedPosition");//lock scroll
 
             isClosed = false;
         };
@@ -157,6 +158,7 @@ function closeMenu () {
             //jeśli menu jest otwarte 'false' - zamknij
                 navContainer.style.transform = "translateX(-105%)";
                 hamburgerOpen.style.transform = "translateX(0)";
+                $('body').removeClass("fixedPosition");//unlock scroll
 
             isClosed = true;
         };
