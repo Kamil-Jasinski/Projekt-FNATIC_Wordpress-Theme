@@ -1035,7 +1035,7 @@ padding-bottom: 30px;
 
 #footer-nav {
     width: 100%;
-    padding: 50px 30px 0 30px;
+    padding: 50px 30px 30px 30px;
     background-color: #313131;
     display: flex;
     flex-direction: column;
@@ -1090,14 +1090,16 @@ padding-bottom: 30px;
 }
 
 #footer-nav a {
+    display: block;
+    padding: 10px 0;
     text-decoration: none;
     color: white;
-    padding: 10px 0;
     font-size: 1.8rem;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     transition: color .3s ease-in-out;
 }
+
 #footer-nav a:hover {
     color: #fda207;
 }
