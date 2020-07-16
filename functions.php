@@ -29,7 +29,8 @@ function projectFnatic_theme_setup() {
     //Navigation menus
       register_nav_menus( array( 
         'header' => 'Header menu', 
-        'footer' => 'Footer menu' 
+        'footer_fnatic' => 'Footer FNATIC',
+        'footer_site' => 'Footer Site Links'
       ) );
     
     //Add featured image support
