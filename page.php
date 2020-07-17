@@ -19,6 +19,7 @@
             <article class="content-text">
                 <?php the_content();?>
                 <?php edit_post_link( '&raquo; Edit Post', '<p>','</p>'); ?>
+            <?php if (!is_page('polityka-prywatnosci')) {?>
                 <div class="post-details">
                <p>By
                <a id="post-author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author();?></a>
@@ -26,6 +27,8 @@
                <?php the_time('F jS, Y g:i a') ?>
                </p>
                </div>
+            <?php } ?>
+
             </article>
 
     </article>
