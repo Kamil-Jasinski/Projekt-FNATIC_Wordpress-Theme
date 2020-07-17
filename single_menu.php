@@ -3,7 +3,7 @@
             <div id="hamburger-open" class="disable-select"><i class="fas fa-bars disable-select"></i></div>
             </div>
             
-            <?php if ( is_single() || is_page() || is_archive() ) { ?>
+            <?php if ( !is_front_page() ) { ?>
  
             <style>
                 /*This styles will onlye appear if page witch is displayed is single page.*/
