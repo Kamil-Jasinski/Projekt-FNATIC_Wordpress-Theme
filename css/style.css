@@ -43,8 +43,11 @@ body {
     font-size: 3rem;
     width: 100vw;
     height: 100vh;
+    position: fixed;
+    top: 0;
     padding: 20px;
     background-color: rgba(21, 21, 21);
+    z-index: 3;
 }
 
 

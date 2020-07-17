@@ -14,12 +14,15 @@
 
         <script src="https://kit.fontawesome.com/831cd7fd02.js" crossorigin="anonymous"></script>
     
-    <?php wp_head(); ?>
+
 </head>
 
 
 <body <?php body_class(); ?>>
-   
+<!--        NO SCRIPT NOTIFICATION        -->
+   <noscript><div class="no-javascript-message"><p>JavaScript is off. For full functionality of this site it is necessary to enable JavaScript.
+ Here are the <a style="color: olivedrab;" href="https://www.enable-javascript.com/">
+ instructions how to enable JavaScript in your web browser</a>.</p></div></noscript>
 
    
    
