@@ -81,29 +81,29 @@ add_filter( 'the_content_more_link', 'post_read_more_link' );
 
 //Parent Category First
 function show_categories() {
+
 $categories = get_the_category( get_the_ID() );
-if( $categories ){
-    $output = "";
-    $all_posts = 'View all posts in %s';
 
-    //display all the top-level categories first + add space
-    foreach ($categories as $category) {
-        if( !$category->parent ){
-            $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( $all_posts ), $category->name ) ) . '" >' . $category->name.'</a>,' . " ";
+    if( $categories ){
+        $output = "";
+        $all_posts = 'View all posts in %s';
+
+        //display all the top-level categories first + add space
+        foreach ($categories as $category) {
+            if( !$category->parent ){
+                $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( $all_posts ), $category->name ) ) . '" >' . $category->name.'</a>,' . " ";
+            }
         }
-    }
 
-    //now, display all the child categories
-    foreach ($categories as $category) {
-        if( $category->parent ){
-            $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( $all_posts ), $category->name ) ) . '" >' . $category->name.'</a>,';
+        //now, display all the child categories
+        foreach ($categories as $category) {
+            if( $category->parent ){
+                $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( $all_posts ), $category->name ) ) . '" >' . $category->name.'</a>,';
+            }
         }
+
+        echo trim( $output, "," );
     }
-
-    echo trim( $output, "," );
-}
-
-    
 };
 
 //Custom Header Video
