@@ -152,7 +152,16 @@ function openMenu() {
             isClosed = false;
         };
 };
-    
+
+
+/////////////////////////////////////////////////////
+////   HIde Comments
+$('*').contents().each(function() {
+  if(this.nodeType === Node.COMMENT_NODE) {
+    $(this).remove();
+  }
+});
+
 function closeMenu () {
     if(!isClosed) {
             //jeśli menu jest otwarte 'false' - zamknij
